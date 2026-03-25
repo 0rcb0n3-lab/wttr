@@ -2,10 +2,9 @@ import requests
 
 
 def get_wttr(location):
-    options = ('nTq')
-    params = {'lang': 'en'}
+    value = {"nTqm": "", "lang": "en"}
     url_template = (f'http://wttr.in/{location}')
-    response = requests.get(f'{url_template}?{options}', params=params)
+    response = requests.get(f'{url_template}, params=value)
     response.raise_for_status()
     print(response.text)
 
